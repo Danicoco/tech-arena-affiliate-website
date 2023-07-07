@@ -3,15 +3,14 @@ import ReactQuill from "react-quill";
 import { useState } from "react";
 import { Button, DatePicker, Input } from "antd";
 import { useMutation } from "react-query";
-import { scheduleMail, sendMail } from "../server/mail";
+import { sendMail } from "../server/mail";
 
 const SendMail = () => {
   const [value, setValue] = useState("");
   const [subject, setSubject] = useState("");
-  const [date, setDate] = useState("");
+  const [, setDate] = useState("");
 
   const mailMutation = useMutation(sendMail);
-  const scheduleMutation = useMutation(scheduleMail);
 
   const onFinish = () => {
     const body ={
@@ -19,7 +18,6 @@ const SendMail = () => {
         content: value,
         subscriptionType: "tech-beginner",
     }
-    console.log({ body })
     mailMutation.mutateAsync(body);
   };
 
