@@ -2,7 +2,7 @@ import { Button, Form, Input } from "antd";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { createTechSubscribers } from "../../server/subscription";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const BeginnerProgrammer = () => {
   const navigate = useNavigate();
@@ -20,19 +20,20 @@ const BeginnerProgrammer = () => {
     mutation.mutateAsync({ ...values, type: "tech-beginner" });
   };
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://eocampaign1.com/form/e11e601a-183c-11ee-b1da-f5b14e9b882e.js';
-    script.async = true;
-    script.setAttribute('data-form', 'e11e601a-183c-11ee-b1da-f5b14e9b882e');
+  // useEffect(() => {
+  //     const script = document.createElement('script');
+  //     script.src = 'https://eocampaign1.com/form/e11e601a-183c-11ee-b1da-f5b14e9b882e.js';
+  //     script.async = true;
+  //     script.setAttribute('data-form', 'e11e601a-183c-11ee-b1da-f5b14e9b882e');
 
-    const container = document.getElementById('form-container');
-    container?.appendChild(script);
+  //     const container = document.getElementById('form-container');
+  //     container?.appendChild(script);
 
-    return () => {
-      container?.removeChild(script);
-    };
-  }, []);
+
+  //   return () => {
+  //     container?.removeChild(script);
+  //   };
+  // }, []);
 
 
   return (
@@ -80,7 +81,6 @@ const BeginnerProgrammer = () => {
       </Form.Item>
     </Form>
     :
-    // <script async src="https://eocampaign1.com/form/e11e601a-183c-11ee-b1da-f5b14e9b882e.js" data-form="e11e601a-183c-11ee-b1da-f5b14e9b882e"></script>
     <div className="flex justify-center items-center w-full">
       <div id="form-container"></div>
     </div>

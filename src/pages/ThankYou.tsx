@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import Steps from "../assets/steps.jpg";
 
 const ThankYou = () => {
@@ -11,8 +12,14 @@ const ThankYou = () => {
           </div>
           <p className="mt-5">
             You've taken the first step to unlock your high-paying freelance
-            journey. A mail has been sent to <span className="font-bold">{localStorage.getItem("email")}</span>{" "}
-            with regards to accessing the course.
+            journey. A mail will be sent to <span className="font-bold">{localStorage.getItem("email")}</span>{" "}.
+          </p>
+          <p className="mt-5">
+            In the meantime, click below to access the course.
+            <Button
+          className="bg-red-600 text-white font-bold hover:text-white"
+          onClick={() => document.location.href = "https://aff.stakecut.com/662725/358656"}
+          >Go To Course Now!</Button>
           </p>
         </div>
       </div>
